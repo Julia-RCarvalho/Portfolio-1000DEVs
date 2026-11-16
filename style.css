@@ -1,0 +1,529 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* feito um corpo principal pra pagina  */
+body {
+  background-color: #130111;
+  color: #2d3748;
+  line-height: 1.6;
+  display: flex; /* deixa o menino solto pra se adaptar */
+  flex-direction: column; /* organizando as crianças na vertical */
+  align-items: center;
+  padding: 40px 20px; /* espaço entre o trem e a plataforma */
+  min-height: 100vh; /* garante que o corpo ocupe pelo menos 100% da altura da tela */
+  position: relative; /* para posicionar os elementos com base no body */
+  overflow: hidden;
+}
+
+/* aplicado foto por cima */
+body::before {
+  content: ""; /* obrigatorio para exibir imagem ou algum outro conrteudo  */
+  position: fixed; /* fixa a imagem */
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 120vh;
+  background-image: url('Foto1.jpg');
+  background-size: cover; /* cobre o espaço e mantem proporção */
+  background-position: left center;
+  background-repeat: no-repeat; /* num repita a imagem */
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%); /* aplica uma mascara para criar o efeito de desvanecimento */
+  mask-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+  z-index: -1; /* joga a camada pra baixo */
+  opacity: 0.9;
+}
+
+/* "DARKMODE" - SÓ DEIXEI O MUNDO SEM CORES E SEM VIDA */
+
+body.dark-mode {
+  background-color: #050008; 
+  color: #e2e8f0;            
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode::before {
+  /* Deixa a foto parecendo post de saudades no instagram */
+  filter: brightness(1) contrast(1.2) grayscale(100%);
+  opacity: 0.7;
+  transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+body.dark-mode .texto-neon,
+body.dark-mode .texto-neonp {
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+
+body.dark-mode .card-habilidades {
+  background: rgba(25, 25, 28, 0.75);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+/* Deixa o GIF de fundo das habilidades em preto e branco. Q COISA TRISTE */
+body.dark-mode .card-habilidades::before {
+  filter: grayscale(100%) brightness(2);
+}
+
+body.dark-mode progress::-webkit-progress-value {
+  background-color: #e2e8f0;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode .card-box {
+  background: linear-gradient(135deg, #121214, #4a4a52, #7a7a85, #18181b);
+  border-color: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+body.dark-mode .card-box:hover {
+  background: linear-gradient(135deg, #27272a, #96969e, #a1a1aa, #18181b);
+  border-color: #ffffff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.75);
+}
+
+body.dark-mode .conteudo-card {
+  background: rgba(18, 18, 20, 0.85);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .icone-projeto,
+body.dark-mode .btn-tema,
+body.dark-mode .btn-neon-audio {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+body.dark-mode .btn-tema:hover,
+body.dark-mode .btn-neon-audio:hover,
+body.dark-mode .icone-projeto:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.85);
+}
+
+/* DARK DO FORM */
+body.dark-mode #input-producao,
+body.dark-mode .btn-enviar {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+body.dark-mode .btn-enviar {
+  background: #ffffff;
+  color: #000000;
+  
+}
+
+body.dark-mode .btn-enviar:hover {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: none;
+  
+}
+
+body.dark-mode .item-producao {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .btn-remover{
+  border-color: #fff;
+  color: #fff;
+}
+
+body.dark-mode .btn-remover:hover{
+  border-color: #000000;
+  color: #000000;
+  background-color: #fff;
+}
+
+
+/* FIM DO DARKMODE */
+
+
+.window-container {
+  position: absolute; /* posicionamento abosluto em relação ao body*/
+  right: 0%;
+  top: 50%;
+  transform: translateY(-50%); /* centraliza na vertical */
+  width: 60%;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 25px 20px;
+  z-index: 5;
+  max-height: 100vh; /* altura maxima*/
+  overflow-y: auto; /* se precisar, tem barra de rolagem no conteiner*/
+}
+
+
+
+/* Estilização do nome */
+.card-inicial {
+  font-size: 1.8rem;
+  color: #ff3bce;
+  text-shadow: 0 0 10px rgba(255, 68, 239, 0.466);
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.texto-neon {
+  color: #fff; 
+  font-family: 'Arial', sans-serif; 
+  text-shadow: 
+    0 0 5px #ff00de,   /* Brilho interno mais forte */
+    0 0 10px #ff00de,  /* Brilho intermediário */
+    0 0 20px #ff00de,  /* Expansão do brilho */
+    0 0 40px #ff00de,  /* Halo maior */
+    0 0 80px #ff00de;  /* Halo distante */
+}
+
+
+.texto-neonp {
+  color: #fff; 
+  font-family: 'Arial', sans-serif; 
+  text-shadow: 
+    0 0 5px #00f3ff,   /* Brilho interno mais forte */
+    0 0 10px #00f3ff,  /* Brilho intermediário */
+    0 0 20px #00f3ff,  /* Expansão do brilho */
+    0 0 40px #00f3ff,  /* Halo maior */
+    0 0 80px #00f3ff;  /* Halo distante */
+}
+
+/* para trocar a cor da barra de progresso */
+progress {
+  vertical-align: middle; /* Sobe a barra para alinhar com o centro do texto */
+  margin-top: -2px;
+  -webkit-appearance: none; /* remove o estilo padrão do navegador (webkit) */
+  appearance: none; /* remove tb, mas de outros navegadores */
+  height: 12px; /* Altura total da barra */
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15); /* Fundo da barra */
+}
+
+/* O uso do :: é pra pseudo-elemenyos. Ou seja, serve pra criar um elemento dentro de um que ja existe. Alterar por cima */
+progress::-webkit-progress-value {
+  background-color: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+  border-radius: 10px;
+  height: 100%; /* Força o ciano a ocupar 100% da altura verticalmente */
+}
+
+.card-habilidades {
+  position: relative;
+  overflow: hidden; /* o gif transborda, então preciso usar para q n apareça a barra de rolagem */
+  background: #38001e48;
+  border-radius: 10px;
+  border: 2px solid #ff00bf;
+  box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-shadow: 0 0 4px #000000;  
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.card-habilidades::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('gif.gif');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.4;
+  
+}
+
+#card-habilidades ul{
+  list-style: none; /* Remove as bolinhas */
+  padding-left: 0;   /* Remove o recuo padrão à esquerda */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espaçamento entre as habilidades */
+}
+
+#conteudo-curiosidades ul{
+  display: inline-block; /* para alinhas as bolinhas perto do texto */
+  text-align: left;/* alinha o texto a esquerda dentro do bloco centralizado*/
+  margin: 0 auto;
+  padding-left: 20px;   /* Remove o recuo padrão à esquerda */
+}
+
+/* Estilização padrão dos cards comuns */
+.card-box {
+  color:#ffffff;
+  border-color: #ff00bf;
+  box-shadow: 0 0 10px rgba(255, 0, 187, 0.787); /* Brilho neon na borda */
+  cursor: pointer; /* muda o cursor pra maozinha */
+  text-align: center;
+  border: 2px solid #ff42cc; /* Borda neon rosa (ou troque para #00f3ff se preferir ciano) */
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 1.5%;
+  background: linear-gradient(135deg, rgb(45, 4, 39), rgb(255, 0, 212), #00f2ff, #022d41);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card-box:hover {
+  background: rgb(4, 4, 22);
+  color: #ffffff;
+  border-color: #00eeff;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.787); 
+  background: linear-gradient(135deg, rgb(255, 0, 0), rgb(255, 111, 0), #bb00ff, #14001a);
+  transform: scale(1.02); /* aumenta a escala/tamanho */
+  position: relative;
+  z-index: 2;
+}
+
+.conteudo-card {
+  text-align: center;
+  display: none; /* oculto até ser acionado pelo JS */
+  position: relative;
+  overflow: hidden;
+  background: #ff54b500;
+  border: 2px solid #ff23de;
+  box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
+  font-size: 1.4rem;
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 35px;
+  margin-top: -40px; /* gambiarra pra encaixar o card */
+  margin-bottom: 10px;
+  color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1;
+}
+
+
+.conteudo-card.ativo{
+  display: block; /* exibe o elemento na tela */
+}
+
+/* animação de entrada do cartão de conteudo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.conteudo-card p{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.icone-projeto {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 200px; /* Cantos arredondados estilo app */
+  box-shadow: 0 0 20px rgba(255, 0, 187, 0.787);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0 20px; /* espaçamento entre eles */
+}
+
+/* zoom no hover */
+.icone-projeto:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00e1ff;
+}
+
+.btn-tema {
+  position: fixed;
+  top: 20px;    /* Distância em relação ao topo da página */
+  left: 20px;   /* Distância em relação à margem esquerda */
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00f3ff;
+  color: #00f3ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  font-family: inherit;
+  font-weight: bold;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.btn-tema:hover {
+  background: #00f3ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f3ff;
+}
+
+
+.btn-neon-audio {
+  position: fixed;
+  top: 70px;    /* Distância em relação ao topo da página */
+  left: 20px;   /* Distância em relação à margem esquerda */
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00f3ff;
+  color: #00f3ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  font-family: inherit;
+  font-weight: bold;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.btn-neon-audio:hover {
+  background: #00f3ff;
+  color: #000;
+  box-shadow: 0 0 20px #00f3ff;
+}
+
+/* PROJETOS EM ANDAMENTO: MURAL DE PRODUÇÃO*/
+#form-producao {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0 20px 0;
+}
+
+/* Campo de texto */
+#input-producao {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #00f3ff;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  width: 60%;
+}
+
+/* Botão Enviar */
+.btn-enviar {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #00f3ff;
+  background: #00f3ff;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-enviar:hover {
+  box-shadow: 0 0 12px #00f3ff;
+}
+
+/* Lista (remove a bolinha branca da esquerda) */
+.lista-producao {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cada item adicionado na lista */
+.item-producao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #ff23de;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+/* Botão Excluir */
+.btn-remover {
+  background: transparent;
+  border: 1px solid #ff3b3b;
+  color: #ff3b3b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s ease;
+}
+
+.btn-remover:hover {
+  background: #ff3b3b;
+  color: #fff;
+}
+/* FIM MURAL DE PRODUÇÃO*/
+
+
+/* Dispositivos com telas menores ou iguais a 992px (Tablets e celulares grandes) */
+@media (max-width: 992px) {
+  
+  /* Ajusta o espaçamento interno do corpo da página para dispositivos móveis */
+  body {
+    padding: 20px 10px;
+  }
+
+  /* A imagem de fundo lateral deixa de ocupar só a metade e cobre o fundo de forma sutil */
+  body::before {
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.2;            /* Reduz a opacidade para garantir total legibilidade do texto */
+    background-position: center;
+  }
+
+  /* O container principal perde o posicionamento absoluto e flui normalmente no centro */
+  .window-container {
+    position: relative;      /* Retira o posicionamento absoluto */
+    top: auto;               /* Remove o ajuste vertical anterior */
+    right: auto;             /* Remove o ajuste horizontal anterior */
+    transform: none;         /* Remove a centralização por translação */
+    width: 95%;              /* Ocupa quase toda a largura da tela do celular */
+    max-height: none;        /* Remove a restrição de altura máxima */
+    margin: 60px auto 20px auto; /* Adiciona margem no topo para não colar no botão de áudio */
+  }
+
+}
+
+/* Dispositivos móveis muito pequenos (Celulares compactos abaixo de 480px) */
+@media (max-width: 480px) {
+  
+  /* Reduz levemente o tamanho do título principal para evitar quebras feias de texto */
+  .card-inicial {
+    font-size: 1.4rem;
+    padding: 10px;
+  }
+
+  /* Ajusta o tamanho da fonte interna dos cards para telas reduzidas */
+  .conteudo-card, .card-habilidades {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  /* Diminui levemente o tamanho dos ícones dos projetos para caberem melhor lado a lado */
+  .icone-projeto {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Reduz o tamanho do botão de áudio para não ocupar espaço excessivo na tela */
+  .btn-neon-audio {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}

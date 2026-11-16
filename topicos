@@ -1,0 +1,58 @@
+1. Estrutura e Estilização Responsiva (HTML5 e CSS3)
+
+Crie a estrutura visual da página garantindo uma hierarquia semântica clara, boa legibilidade e
+adaptação a diferentes tamanhos de tela:
+Cabeçalho ( <header> ): Deve conter sua foto ou avatar, seu nome completo, o cargo ou área
+profissional desejada (ex.: Desenvolvedor(a) Frontend) e um botão interativo para alternar o tema
+visual da página.
+
+Seção "Sobre Mim": Um breve resumo profissional apresentando sua trajetória, objetivos de
+carreira e as principais tecnologias que você está estudando ou já domina.
+Seção "Projetos ou Habilidades": Um container dedicado (como uma lista <ul> ou grade de
+itens) onde serão exibidos os seus projetos e competências.
+
+Responsividade (Mobile-First / Media Queries): O layout deve se adaptar fluidamente a
+dispositivos móveis, tablets e desktops utilizando Flexbox ou CSS Grid, unidades flexíveis e
+@media queries (ex.: ajustando alinhamentos do cabeçalho e colunas de projetos em telas
+menores).
+
+Temas Visuais no CSS: Configure duas variações de cores na folha de estilos: um Tema Claro
+(padrão) e um Tema Escuro (Dark Mode) ativado por meio de uma classe específica (ex.:
+.dark-mode no <body> ).
+
+
+
+2. Interatividade com TypeScript (Manipulação do DOM)
+
+O script em TypeScript ( app.ts ) deve utilizar tipagem estática (como Type Casting com as
+HTMLInputElement , Optional Chaining ?. e eventos tipados como SubmitEvent ) para
+implementar duas funcionalidades dinâmicas:
+
+Funcionalidade A — Alternância de Tema (Dark Mode)
+
+Selecione o botão de tema do cabeçalho utilizando document.querySelector com a tipagem
+adequada ( HTMLButtonElement | null ).
+
+Registre um escutador de eventos ( addEventListener ) para o evento de clique ( 'click' )
+utilizando encadeamento opcional ( ?. ).
+
+Utilize classList.toggle no elemento document.body para ativar e desativar a classe de
+modo escuro a cada clique.
+
+
+3. Organização e Critérios de Entrega
+
+Critério Especificação Esperada
+
+Arquivos do Projeto Organizar o projeto em uma pasta única contendo os arquivos: index.html ,
+style.css , tsconfig.json , app.ts e o arquivo compilado app.js
+(referenciado no HTML).
+
+Responsividade e Tipagem
+
+Layout adaptado para mobile e desktop sem quebra horizontal, e código
+TypeScript compilando sem erros de tipagem ( tsc ).
+
+Documentação Incluir comentários explicativos no arquivo app.ts descrevendo cada etapa
+
+de seleção tipada, evento e manipulação do DOM.

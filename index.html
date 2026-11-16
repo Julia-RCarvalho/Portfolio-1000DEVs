@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Julia Emilly Ribeiro de Carvalho</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  <button id="btn-tema" class="btn-tema" aria-label="Alterar Tema">
+        🌙 Modo Escuro
+  </button>
+
+  <!-- Colocando música no portfólio -->
+  <audio id="musica-fundo" loop>
+    <source src="Flowerinahurricane.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- criando o botão de ligado e desligado. Apenas 8 ou 80, n temos opção de baixar o volume kkkk -->
+  <button onclick="toggleMusica()" id="btn-audio" class="btn-neon-audio">
+    🎵 Som: OFF <!-- O JS irá mudá-lo para ON quando for clicado -->
+  </button>
+
+  <!-- O que é Toggle? é um recurso utilizado para alternar entre dois estados opostos. Ali no caso, On e Off. -->
+  
+  <main class="window-container">
+    <!-- Cria um container que engloba os demais cards e mantem eles do lado direito da tela -->
+    <header class="card-inicial">
+      <h1 class="texto-neon">Julia Emilly Ribeiro de Carvalho</h1>
+      <p class="texto-neonp">Desenvolvedora Web Fullstack em Formação</p>
+    </header>
+
+    <section class="card-habilidades">
+      <h2>Minhas Habilidades</h2>
+      <ul>
+        <li>
+          HTML5: <progress value="50" max="100"></progress>
+        </li>
+        <li>
+          CSS: <progress value="70" max="100"></progress>
+        </li>
+        <li>
+          JavaScript: <progress value="60" max="100"></progress>
+        </li>
+        <li>
+          PostgreSQL: <progress value="30" max="100"></progress>
+        </li>
+        <li>
+          Lógica de Programação: <progress value="70" max="100"></Progress>
+        </li>
+      </ul>
+    </section>
+
+    <div class="card-box" onclick="toggleCard('conteudo-sobre')"> <!-- torna o card clicável para abrir o conteúdo  -->
+      <h2>Sobre Mim</h2>
+    </div>
+
+    <section id="conteudo-sobre" class="conteudo-card">
+      <p>Tenho 27 anos e moro na cidade do Rio de Janeiro.</p>
+      <p>Atualmente, estou no 2º período do curso de ADS na UNESA. Também sou bolsista do Projeto 1000DEVs, um curso de
+        desenvolvimento web fullstack oferecido pela Johnson&Johnson em parceria com o Hospital Israelita Einstein e a
+        SoulCode Academy.</p>
+    </section>
+
+    <div class="card-box" onclick="toggleCard('conteudo-curiosidades')">
+      <h2>Curiosidades</h2>
+    </div>
+
+    <section id="conteudo-curiosidades" class="conteudo-card">
+      <ul>
+        <li>Tenho um casal de coelhinhos: Tunico e Ciri.</li>
+        <li>Pratico Muay Thai nas horas vagas.</li>
+        <li>Sei pedir um cafézinho em japonês.</li>
+      </ul>
+    </section>
+
+    <div class="card-box" onclick="toggleCard('conteudo-projetos')">
+      <h2>Projetos Finalizados</h2>
+    </div>
+
+    <section id="conteudo-projetos" class="conteudo-card">
+      <p>Conheça alguns dos meus projetos no GitHub!</p>
+
+      <div class="projetos-grid"> <!-- criando uma grade para os projetos para que fiquem lado a lado -->
+
+        <!-- para que o projeto abra em uma nova aba, usa-se "_blank" no target -->
+
+        <a href="https://github.com/Julia-RCarvalho/todo-list-app" target="_blank" class="link-projeto"><img src="tudolist.jpg" alt="TudoList" class="icone-projeto"></a>
+
+        <a href="https://github.com/Julia-RCarvalho/Cinema1000DEVs" target="_blank" class="link-projeto"><img src="pngtree-popcorn-buckets-vector-png-image_11372772.png" alt="CINE1000DEVs" class="icone-projeto"></a>
+
+        
+    </section>
+
+
+<div class="card-box" onclick="toggleCard('mural-conteudo')">
+      <h2>Projetos em Andamento</h2>
+    </div>
+
+<section id="mural-conteudo" class="conteudo-card">
+
+  <h3>Em Produção (<span id="em-producao">0</span>)</h3>
+  <form id="form-producao">
+    <input
+      type="text"
+      id="input-producao"
+    >
+    <button type="submit" class="btn-enviar">Enviar</button>
+  </form>
+
+  <ul id="lista-producao" class="lista-producao">
+  </ul>
+</section>
+
+    <div class="card-box" onclick="toggleCard('conteudo-contato')">
+      <h2>Contato</h2>
+    </div>
+    <section id="conteudo-contato" class="conteudo-card">
+      <p>Conecte-se comigo no Linkedin!</p>
+      <a href="https://www.linkedin.com/in/julia-ercarvalho/" target="_blank" class="link-edin"><img src="https://cdn-icons-png.flaticon.com/512/179/179330.png" alt="linkedin" class="icone-projeto"></a>
+      <!-- gambiarrei pra aproveitar as configurações dos icones-projeto -->
+    </section>
+    
+    
+  </main>
+  
+  <script src="app.js"></script>   <!-- abraçando o js na causa -->
+
+</body>
+</html>
