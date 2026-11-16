@@ -13,10 +13,6 @@
 // de cada elemento capturado do HTML, garantindo segurança na tipagem.
 // ----------------------------------------------------------------------------
 const btnTema = document.querySelector('#btn-tema');
-const formProducao = document.querySelector('#form-producao');
-const inputProducao = document.querySelector('#input-producao');
-const listaProducao = document.querySelector('#lista-producao');
-const totalProducaoSpan = document.querySelector('#em-producao');
 //dark mode
 //primeiro ele verifica se o btn é nullo ou indefinido. Se n existir, nada faz. Caso exista, ele ouve um evento de click e executa o bloco abaixo
 //ele acessa body e a classe q contem o dark-mode.
@@ -61,53 +57,3 @@ function toggleCard(id) {
 }
 // Expõe a função no escopo global (window) para que o atributo onclick="" do HTML consiga acessá-la
 window.toggleCard = toggleCard;
-// ============================================================================
-// MANIPULAÇÃO DO MURAL DE PROJETOS (CRIAÇÃO, CONTAGEM E REMOÇÃO)
-// escuta o 'submit' do formulário, cria os elementos <li>, <span> e <button>
-// via JavaScript, atualiza o contador e permite a exclusão individual.
-// ============================================================================
-// Função tipada responsável por contar os itens <li> e atualizar o contador na tela
-const atualizarTotalProducao = () => {
-    if (listaProducao && totalProducaoSpan) {
-        const quantidade = listaProducao.children.length;
-        totalProducaoSpan.textContent = String(quantidade);
-    }
-};
-// Evento de envio (submit) do formulário tipado com SubmitEvent
-if (formProducao && inputProducao && listaProducao) {
-    formProducao.addEventListener('submit', (evento) => {
-        // Impede o comportamento padrão de recarregar a página
-        evento.preventDefault();
-        // Captura e limpa espaços vazios nas extremidades do texto digitado
-        const textoDigitado = inputProducao.value.trim();
-        // Validação para não permitir envio de texto vazio
-        if (textoDigitado === '') {
-            inputProducao.focus();
-            return;
-        }
-        // Criação dinâmica do elemento de lista (<li>)
-        const novoItem = document.createElement('li');
-        novoItem.classList.add('item-producao');
-        // Criação dinâmica do <span> que armazenará o nome do projeto
-        const spanTexto = document.createElement('span');
-        spanTexto.textContent = textoDigitado;
-        // Criação dinâmica do botão de exclusão (<button>)
-        const btnRemover = document.createElement('button');
-        btnRemover.textContent = 'Excluir';
-        btnRemover.classList.add('btn-remover');
-        btnRemover.type = 'button';
-        // Evento de clique para remover o item específico e recalcular o total
-        btnRemover.addEventListener('click', () => {
-            novoItem.remove();
-            atualizarTotalProducao();
-        });
-        // Anexa o texto e o botão dentro do <li>, e insere o <li> na lista <ul>
-        novoItem.appendChild(spanTexto);
-        novoItem.appendChild(btnRemover);
-        listaProducao.appendChild(novoItem);
-        // Atualiza o contador, limpa o campo de entrada e devolve o foco para digitação
-        atualizarTotalProducao();
-        inputProducao.value = '';
-        inputProducao.focus();
-    });
-}

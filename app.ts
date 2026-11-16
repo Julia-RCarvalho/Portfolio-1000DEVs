@@ -14,10 +14,6 @@
 // ----------------------------------------------------------------------------
 
 const btnTema = document.querySelector<HTMLButtonElement>('#btn-tema');
-const formProducao = document.querySelector<HTMLFormElement>('#form-producao');
-const inputProducao = document.querySelector<HTMLInputElement>('#input-producao');
-const listaProducao = document.querySelector<HTMLUListElement>('#lista-producao');
-const totalProducaoSpan = document.querySelector<HTMLSpanElement>('#em-producao');
 
 //dark mode
 
@@ -76,63 +72,3 @@ function toggleCard(id: string): void {
 // Expõe a função no escopo global (window) para que o atributo onclick="" do HTML consiga acessá-la
 (window as any).toggleCard = toggleCard;
 
-// ============================================================================
-// MANIPULAÇÃO DO MURAL DE PROJETOS (CRIAÇÃO, CONTAGEM E REMOÇÃO)
-// escuta o 'submit' do formulário, cria os elementos <li>, <span> e <button>
-// via JavaScript, atualiza o contador e permite a exclusão individual.
-// ============================================================================
-
-// Função tipada responsável por contar os itens <li> e atualizar o contador na tela
-const atualizarTotalProducao = (): void => {
-  if (listaProducao && totalProducaoSpan) {
-    const quantidade: number = listaProducao.children.length;
-    totalProducaoSpan.textContent = String(quantidade);
-  }
-};
-
-// Evento de envio (submit) do formulário tipado com SubmitEvent
-if (formProducao && inputProducao && listaProducao) {
-  formProducao.addEventListener('submit', (evento: SubmitEvent): void => {
-    // Impede o comportamento padrão de recarregar a página
-    evento.preventDefault();
-
-    // Captura e limpa espaços vazios nas extremidades do texto digitado
-    const textoDigitado: string = inputProducao.value.trim();
-
-    // Validação para não permitir envio de texto vazio
-    if (textoDigitado === '') {
-      inputProducao.focus();
-      return;
-    }
-
-    // Criação dinâmica do elemento de lista (<li>)
-    const novoItem: HTMLLIElement = document.createElement('li');
-    novoItem.classList.add('item-producao');
-
-    // Criação dinâmica do <span> que armazenará o nome do projeto
-    const spanTexto: HTMLSpanElement = document.createElement('span');
-    spanTexto.textContent = textoDigitado;
-
-    // Criação dinâmica do botão de exclusão (<button>)
-    const btnRemover: HTMLButtonElement = document.createElement('button');
-    btnRemover.textContent = 'Excluir';
-    btnRemover.classList.add('btn-remover');
-    btnRemover.type = 'button';
-
-    // Evento de clique para remover o item específico e recalcular o total
-    btnRemover.addEventListener('click', (): void => {
-      novoItem.remove();
-      atualizarTotalProducao();
-    });
-
-    // Anexa o texto e o botão dentro do <li>, e insere o <li> na lista <ul>
-    novoItem.appendChild(spanTexto);
-    novoItem.appendChild(btnRemover);
-    listaProducao.appendChild(novoItem);
-
-    // Atualiza o contador, limpa o campo de entrada e devolve o foco para digitação
-    atualizarTotalProducao();
-    inputProducao.value = '';
-    inputProducao.focus();
-  });
-}
