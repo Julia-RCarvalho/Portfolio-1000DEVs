@@ -336,6 +336,7 @@ progress::-webkit-progress-value {
   height: 80px;
   background-color: white;
   border-radius: 200px; /* Cantos arredondados estilo app */
+  
   box-shadow: 0 0 20px rgba(255, 0, 187, 0.787);
   cursor: pointer;
   transition: transform 0.2s ease;
