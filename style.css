@@ -162,11 +162,11 @@ body.dark-mode .btn-remover:hover{
 
 /* Estilização do nome */
 .card-inicial {
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: #ff3bce;
   text-shadow: 0 0 10px rgba(255, 68, 239, 0.466);
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 10px;
 }
 
@@ -193,13 +193,13 @@ body.dark-mode .btn-remover:hover{
 }
 
 .card-habilidades {
+  font-size: 1.2rem;
   position: relative;
   overflow: hidden;
   background: #38001e48;
   border-radius: 10px;
   border: 2px solid #ff00bf;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
-  font-size: 1.0rem;
   color: #ffffff;
   text-shadow: 0 0 4px #000000;  
   text-align: center;
@@ -226,14 +226,14 @@ body.dark-mode .btn-remover:hover{
 /* Estilização padrão dos cards comuns */
 .card-box {
   color:#ffffff;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   border-color: #ff00bf;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
   cursor: pointer;
   text-align: center;
   border: 2px solid #ff42cc;
   border-radius: 12px;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 1.5%;
   background: linear-gradient(135deg, rgb(45, 4, 39), rgb(255, 0, 212), #00f2ff, #022d41);
   transition: all 0.3s ease;
@@ -259,7 +259,7 @@ body.dark-mode .btn-remover:hover{
   background: #ff54b500;
   border: 2px solid #ff23de;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
-  font-size: 1rem;
+  font-size: 1.4rem;
   border-radius: 10px;
   padding: 20px;
   padding-top: 50px;
@@ -293,8 +293,8 @@ body.dark-mode .btn-remover:hover{
 }
 
 .icone-habilidades {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background-color: white;
   border-radius: 50%;
   border: 3px solid #ffffff;
@@ -310,8 +310,8 @@ body.dark-mode .btn-remover:hover{
 
 /* CORRIGIDO: Adicionado width e height corretos aqui */
 .icone-projeto {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background-color: white;
   border-radius: 200px;
   box-shadow: 0 0 20px rgb(255, 0, 187);
@@ -327,8 +327,8 @@ body.dark-mode .btn-remover:hover{
 
 /* CORRIGIDO: Adicionado width e height corretos aqui */
 .icone-contato {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   border-radius: 200px;
   box-shadow: 0 0 20px rgb(255, 0, 187);
   cursor: pointer;
@@ -353,7 +353,7 @@ body.dark-mode .btn-remover:hover{
  
 .btn-tema,
 .btn-neon-audio {
-  font-size: 0.7rem;
+  font-size: 1rem;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid #00f3ff;
   color: #00f3ff;
