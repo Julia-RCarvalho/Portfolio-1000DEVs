@@ -261,11 +261,12 @@ progress::-webkit-progress-value {
   gap: 10px; /* espaçamento entre as habilidades */
 }
 
-.conteudo-curiosidades ul{
-  display: inline-block; /* para alinhas as bolinhas perto do texto */
-  text-align: left;/* alinha o texto a esquerda dentro do bloco centralizado*/
-  margin: 0 auto;
-  padding-left: 20px;   /* Remove o recuo padrão à esquerda */
+.conteudo-card ul{
+  list-style: none; /* Remove as bolinhas */
+  padding-left: 0;   /* Remove o recuo padrão à esquerda */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
 }
 
 /* Estilização padrão dos cards comuns */
