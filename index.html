@@ -27,38 +27,34 @@
       <p class="texto-neonp">Desenvolvedora Web Fullstack em Formação</p>
     </header>
 
-    <section class="card-habilidades">
-      <h2>Minhas Habilidades</h2>
-      <ul>
-        <li>
-          HTML5: <progress value="50" max="100"></progress>
-        </li>
-        <li>
-          CSS: <progress value="70" max="100"></progress>
-        </li>
-        <li>
-          JavaScript: <progress value="60" max="100"></progress>
-        </li>
-        <li>
-          PostgreSQL: <progress value="30" max="100"></progress>
-        </li>
-        <li>
-          Lógica de Programação: <progress value="70" max="100"></Progress>
-        </li>
-      </ul>
-    </section>
+    <div class="card-habilidades">
+      <h2>Minhas Habilidades</h2> 
+      <br>
+      <section id="habilidades" class="conteudo-habilidades">
+        <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_960_720.png" alt="html5" class="icone-habilidades"></a>
+        <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_960_720.png" alt="css3" class="icone-habilidades"></a>
+        <img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/5/typescript-icon-round-to2r7ctaodkd8o2drz0wsr.png/typescript-icon-round-1v1u40zhwzqebjcth7f50p.png?_a=DATAiZAAZAA0" alt="ts" class="icone-habilidades"></a>
+        <img src="https://worthy-deer-b71b61c421.media.strapiapp.com/img_1755706074480_tcjw7w_a70ec47672_f8e70ce71e.svg" alt="js" class="icone-habilidades"></a>
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-postgresql-icon-svg-download-png-1175119.png?f=webp" alt="postgresql" class="icone-habilidades"></a>
+      </section>
+    </div>
+
+     
 
     <div class="card-box" onclick="toggleCard('conteudo-sobre')"> <!-- torna o card clicável para abrir o conteúdo  -->
       <h2>Sobre Mim</h2>
     </div>
 
     <section id="conteudo-sobre" class="conteudo-card">
-      <p>Tenho 27 anos e moro na Cidade do Rio de Janeiro.</p>
-      <p>Atualmente, estou indo para o 3º período do curso de ADS na UNESA. Também sou bolsista do Projeto 1000DEVs, um
-        curso de
-        desenvolvimento web fullstack oferecido pela Johnson&Johnson em parceria com o Hospital Israelita Albert
-        Einstein e a
-        SoulCode Academy.</p>
+      <p>Sou formada em Enfermagem, tenho 27 anos e moro no Rio de Janeiro.</p>
+
+      <p>Atuei por quase dois anos na área de Soluções em Saúde, onde lidava com indicadores de qualidade hospitalar. 
+        Foi buscando resolver um gargalo de gestão de tempo e produtividade da equipe que tive meu primeiro contato com automação usando Excel e VBA. 
+        Ver o impacto real que aquela solução gerou despertou meu interesse pela tecnologia.</p>
+
+      <p>Desde então, me apaixonei pelo desenvolvimento Front-end e decidi mergulhar de vez na área, dando lugar à criatividade e à paixão por criar. 
+        Atualmente, estou indo para o 3º período de Análise e Desenvolvimento de Sistemas (ADS) na UNESA e sou bolsista no Projeto 1000DEVs — formação 
+        Full Stack promovida pela Johnson & Johnson em parceria com o Hospital Israelita Albert Einstein e a SoulCode Academy.</p>
     </section>
 
     <div class="card-box" onclick="toggleCard('conteudo-curiosidades')">
@@ -74,7 +70,7 @@
     </section>
 
     <div class="card-box" onclick="toggleCard('conteudo-projetos')">
-      <h2>Projetos Finalizados</h2>
+      <h2>Projetos</h2>
     </div>
 
     <section id="conteudo-projetos" class="conteudo-card">
@@ -89,6 +85,9 @@
 
         <a href="https://github.com/Julia-RCarvalho/Cinema1000DEVs" target="_blank" class="link-projeto"><img
             src="pngtree-popcorn-buckets-vector-png-image_11372772.png" alt="CINE1000DEVs" class="icone-projeto"></a>
+        
+        <a href="https://github.com/Julia-RCarvalho/AnimeHouse" target="_blank" class="link-projeto"><img
+            src="https://mystickermania.com/cdn/stickers/cartoons/sticker_5064-512x512.png" alt="AnimeHouse" class="icone-projeto"></a>
 
 
     </section>
@@ -97,10 +96,13 @@
       <h2>Contato</h2>
     </div>
     <section id="conteudo-contato" class="conteudo-card">
-      <p>Conecte-se comigo no Linkedin!</p>
+      <p>Conecte-se comigo!</p>
       <a href="https://www.linkedin.com/in/julia-ercarvalho/" target="_blank" class="link-edin"><img
-          src="https://cdn-icons-png.flaticon.com/512/179/179330.png" alt="linkedin" class="icone-projeto"></a>
-      <!-- gambiarrei pra aproveitar as configurações dos icones-projeto -->
+          src="https://cdn-icons-png.flaticon.com/512/179/179330.png" alt="linkedin" class="icone-contato"></a>
+      
+      <a href="https://github.com/Julia-RCarvalho" target="_blank" class="link-edin"><img
+          src="https://images.icon-icons.com/3685/PNG/512/github_logo_icon_229278.png" alt="linkedin" class="icone-contato"></a>
+
     </section>
 
 

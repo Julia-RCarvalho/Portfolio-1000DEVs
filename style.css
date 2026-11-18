@@ -160,7 +160,7 @@ body.dark-mode .btn-remover:hover{
   background: transparent;
   border: none;
   box-shadow: none;
-  padding: 25px 20px;
+  padding: 20px 20px;
   z-index: 5;
   max-height: 100vh; /* altura maxima*/
   overflow-y: auto; /* se precisar, tem barra de rolagem no conteiner*/
@@ -174,7 +174,7 @@ body.dark-mode .btn-remover:hover{
   color: #ff3bce;
   text-shadow: 0 0 10px rgba(255, 68, 239, 0.466);
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 10px;
 }
 
@@ -201,25 +201,7 @@ body.dark-mode .btn-remover:hover{
     0 0 80px #00f3ff;  /* Halo distante */
 }
 
-/* para trocar a cor da barra de progresso */
-progress {
-  vertical-align: middle; /* Sobe a barra para alinhar com o centro do texto */
-  margin-top: -2px;
-  -webkit-appearance: none; /* remove o estilo padrão do navegador (webkit) */
-  appearance: none; /* remove tb, mas de outros navegadores */
-  height: 12px; /* Altura total da barra */
-  border-radius: 10px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.15); /* Fundo da barra */
-}
 
-/* O uso do :: é pra pseudo-elemenyos. Ou seja, serve pra criar um elemento dentro de um que ja existe. Alterar por cima */
-progress::-webkit-progress-value {
-  background-color: #00f3ff;
-  box-shadow: 0 0 10px #00f3ff;
-  border-radius: 10px;
-  height: 100%; /* Força o ciano a ocupar 100% da altura verticalmente */
-}
 
 .card-habilidades {
   position: relative;
@@ -232,7 +214,7 @@ progress::-webkit-progress-value {
   color: #ffffff;
   text-shadow: 0 0 4px #000000;  
   text-align: center;
-  padding: 10px;
+  padding: 16px;
   margin-bottom: 30px;
   transition: all 0.3s ease;
 }
@@ -249,25 +231,10 @@ progress::-webkit-progress-value {
   background-position: left center;
   background-repeat: no-repeat;
   z-index: -1;
-  opacity: 0.4;
+  opacity: 0.8;
   
 }
 
-.card-habilidades ul{
-  list-style: none; /* Remove as bolinhas */
-  padding-left: 0;   /* Remove o recuo padrão à esquerda */
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* espaçamento entre as habilidades */
-}
-
-.conteudo-card ul{
-  list-style: none; /* Remove as bolinhas */
-  padding-left: 0;   /* Remove o recuo padrão à esquerda */
-  display: flex;
-  flex-direction: column;
-  gap: 5px; 
-}
 
 /* Estilização padrão dos cards comuns */
 .card-box {
@@ -309,7 +276,7 @@ progress::-webkit-progress-value {
   font-size: 1rem;
   border-radius: 10px;
   padding: 20px;
-  padding-top: 55px;
+  padding-top: 50px;
   margin-top: -40px; /* gambiarra pra encaixar o card */
   margin-bottom: 10px;
   color: #fff;
@@ -333,12 +300,37 @@ progress::-webkit-progress-value {
   text-align: center;
 }
 
+.conteudo-card ul{
+  list-style: none; /* Remove as bolinhas */
+  padding-left: 0;   /* Remove o recuo padrão à esquerda */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+}
+
+.icone-habilidades {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%; /* Cantos arredondados estilo app */
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 25px rgb(255, 0, 187);
+  transition: transform 0.2s ease;
+  margin: 0 20px; /* espaçamento entre eles */
+  
+}
+
+.icone-habilidades:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00e1ff;
+}
+
 .icone-projeto {
   width: 80px;
   height: 80px;
   background-color: white;
   border-radius: 200px; /* Cantos arredondados estilo app */
-  box-shadow: 0 0 20px rgba(255, 0, 187, 0.787);
+  box-shadow: 0 0 20px rgb(255, 0, 187);
   cursor: pointer;
   transition: transform 0.2s ease;
   margin: 0 20px; /* espaçamento entre eles */
@@ -346,6 +338,22 @@ progress::-webkit-progress-value {
 
 /* zoom no hover */
 .icone-projeto:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00e1ff;
+}
+
+.icone-contato {
+  width: 80px;
+  height: 80px;
+  border-radius: 200px; /* Cantos arredondados estilo app */
+  box-shadow: 0 0 20px rgb(255, 0, 187);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 0 20px; /* espaçamento entre eles */
+}
+
+/* zoom no hover */
+.icone-contato:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px #00e1ff;
 }
@@ -433,7 +441,7 @@ progress::-webkit-progress-value {
 
   .card-habilidades {
     font-size: 0.9rem;
-    padding: 12px;
+    padding: 10px;
   }
 
   .conteudo-card {
@@ -443,7 +451,22 @@ progress::-webkit-progress-value {
   }
 
   .icone-projeto {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+  }
+
+  .icone-contato {
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+  }
+ 
+  .icone-habilidades {
+    width: 50px;
+    height: 50px;
+    margin: 4px;
   }
 }
+
+  
