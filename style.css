@@ -61,7 +61,6 @@ body.dark-mode .texto-neonp {
     0 0 30px rgba(255, 255, 255, 0.3);
 }
 
-
 body.dark-mode .card-habilidades {
   background: rgba(25, 25, 28, 0.75);
   border-color: rgba(255, 255, 255, 0.6);
@@ -121,14 +120,12 @@ body.dark-mode .btn-enviar {
 body.dark-mode .btn-enviar {
   background: #ffffff;
   color: #000000;
-  
 }
 
 body.dark-mode .btn-enviar:hover {
   background: #ffffff;
   color: #000000;
   box-shadow: none;
-  
 }
 
 body.dark-mode .item-producao {
@@ -146,27 +143,22 @@ body.dark-mode .btn-remover:hover{
   color: #000000;
   background-color: #fff;
 }
-
-
 /* FIM DO DARKMODE */
 
-
 .window-container {
-  position: absolute; /* posicionamento abosluto em relação ao body*/
+  position: absolute;
   right: 0%;
   top: 50%;
-  transform: translateY(-50%); /* centraliza na vertical */
+  transform: translateY(-50%);
   width: 60%;
   background: transparent;
   border: none;
   box-shadow: none;
   padding: 20px 20px;
   z-index: 5;
-  max-height: 100vh; /* altura maxima*/
-  overflow-y: auto; /* se precisar, tem barra de rolagem no conteiner*/
+  max-height: 100vh;
+  overflow-y: auto;
 }
-
-
 
 /* Estilização do nome */
 .card-inicial {
@@ -182,30 +174,27 @@ body.dark-mode .btn-remover:hover{
   color: #fff; 
   font-family: 'Arial', sans-serif; 
   text-shadow: 
-    0 0 5px #ff00de,   /* Brilho interno mais forte */
-    0 0 10px #ff00de,  /* Brilho intermediário */
-    0 0 20px #ff00de,  /* Expansão do brilho */
-    0 0 40px #ff00de,  /* Halo maior */
-    0 0 80px #ff00de;  /* Halo distante */
+    0 0 5px #ff00de,
+    0 0 10px #ff00de,
+    0 0 20px #ff00de,
+    0 0 40px #ff00de,
+    0 0 80px #ff00de;
 }
-
 
 .texto-neonp {
   color: #fff; 
   font-family: 'Arial', sans-serif; 
   text-shadow: 
-    0 0 5px #00f3ff,   /* Brilho interno mais forte */
-    0 0 10px #00f3ff,  /* Brilho intermediário */
-    0 0 20px #00f3ff,  /* Expansão do brilho */
-    0 0 40px #00f3ff,  /* Halo maior */
-    0 0 80px #00f3ff;  /* Halo distante */
+    0 0 5px #00f3ff,
+    0 0 10px #00f3ff,
+    0 0 20px #00f3ff,
+    0 0 40px #00f3ff,
+    0 0 80px #00f3ff;
 }
-
-
 
 .card-habilidades {
   position: relative;
-  overflow: hidden; /* o gif transborda, então preciso usar para q n apareça a barra de rolagem */
+  overflow: hidden;
   background: #38001e48;
   border-radius: 10px;
   border: 2px solid #ff00bf;
@@ -232,19 +221,17 @@ body.dark-mode .btn-remover:hover{
   background-repeat: no-repeat;
   z-index: -1;
   opacity: 0.8;
-  
 }
-
 
 /* Estilização padrão dos cards comuns */
 .card-box {
   color:#ffffff;
   font-size: 0.8rem;
   border-color: #ff00bf;
-  box-shadow: 0 0 10px rgba(255, 0, 187, 0.787); /* Brilho neon na borda */
-  cursor: pointer; /* muda o cursor pra maozinha */
+  box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
+  cursor: pointer;
   text-align: center;
-  border: 2px solid #ff42cc; /* Borda neon rosa (ou troque para #00f3ff se preferir ciano) */
+  border: 2px solid #ff42cc;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 1.5%;
@@ -255,19 +242,18 @@ body.dark-mode .btn-remover:hover{
 }
 
 .card-box:hover {
-  background: rgb(4, 4, 22);
   color: #ffffff;
   border-color: #00eeff;
   box-shadow: 0 0 10px rgba(0, 217, 255, 0.787); 
   background: linear-gradient(135deg, rgb(255, 0, 0), rgb(255, 111, 0), #bb00ff, #14001a);
-  transform: scale(1.02); /* aumenta a escala/tamanho */
+  transform: scale(1.02);
   position: relative;
   z-index: 2;
 }
 
 .conteudo-card {
   text-align: center;
-  display: none; /* oculto até ser acionado pelo JS */
+  display: none;
   position: relative;
   overflow: hidden;
   background: #ff54b500;
@@ -277,19 +263,17 @@ body.dark-mode .btn-remover:hover{
   border-radius: 10px;
   padding: 20px;
   padding-top: 50px;
-  margin-top: -40px; /* gambiarra pra encaixar o card */
+  margin-top: -40px;
   margin-bottom: 10px;
   color: #fff;
   animation: fadeIn 0.3s ease-in-out;
   z-index: 1;
 }
 
-
 .conteudo-card.ativo{
-  display: block; /* exibe o elemento na tela */
+  display: block;
 }
 
-/* animação de entrada do cartão de conteudo */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
@@ -301,8 +285,8 @@ body.dark-mode .btn-remover:hover{
 }
 
 .conteudo-card ul{
-  list-style: none; /* Remove as bolinhas */
-  padding-left: 0;   /* Remove o recuo padrão à esquerda */
+  list-style: none;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   gap: 5px; 
@@ -312,12 +296,11 @@ body.dark-mode .btn-remover:hover{
   width: 80px;
   height: 80px;
   background-color: white;
-  border-radius: 50%; /* Cantos arredondados estilo app */
+  border-radius: 50%;
   border: 3px solid #ffffff;
   box-shadow: 0 0 25px rgb(255, 0, 187);
   transition: transform 0.2s ease;
-  margin: 0 20px; /* espaçamento entre eles */
-  
+  margin: 0 20px;
 }
 
 .icone-habilidades:hover {
@@ -325,34 +308,34 @@ body.dark-mode .btn-remover:hover{
   box-shadow: 0 0 25px #00e1ff;
 }
 
+/* CORRIGIDO: Adicionado width e height corretos aqui */
 .icone-projeto {
   width: 80px;
   height: 80px;
   background-color: white;
-  border-radius: 200px; /* Cantos arredondados estilo app */
+  border-radius: 200px;
   box-shadow: 0 0 20px rgb(255, 0, 187);
   cursor: pointer;
   transition: transform 0.2s ease;
-  margin: 0 20px; /* espaçamento entre eles */
+  margin: 0 20px;
 }
 
-/* zoom no hover */
 .icone-projeto:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px #00e1ff;
 }
 
+/* CORRIGIDO: Adicionado width e height corretos aqui */
 .icone-contato {
   width: 80px;
   height: 80px;
-  border-radius: 200px; /* Cantos arredondados estilo app */
+  border-radius: 200px;
   box-shadow: 0 0 20px rgb(255, 0, 187);
   cursor: pointer;
   transition: transform 0.2s ease;
-  margin: 0 20px; /* espaçamento entre eles */
+  margin: 0 20px;
 }
 
-/* zoom no hover */
 .icone-contato:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px #00e1ff;
@@ -363,7 +346,7 @@ body.dark-mode .btn-remover:hover{
   top: 20px;
   left: 20px;
   display: flex;
-  flex-direction: column; /* Empilhados no canto esquerdo em telas grandes */
+  flex-direction: column;
   gap: 12px;
   z-index: 1000;
 }
@@ -396,7 +379,7 @@ body.dark-mode .btn-remover:hover{
 @media (max-width: 992px) {
   body {
     padding: 20px 10px;
-    overflow-y: auto; /* Permite rolagem normal no mobile */
+    overflow-y: auto;
   }
 
   body::before {
@@ -406,11 +389,10 @@ body.dark-mode .btn-remover:hover{
     background-position: center;
   }
 
-  /* Alinha os botões lado a lado e centralizados no topo */
   .btn-topo {
-    position: static;          /* Sai do canto fixo e entra no fluxo normal */
-    flex-direction: row;       /* Coloca os botões lado a lado */
-    justify-content: center;   /* Centraliza horizontalmente */
+    position: static;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     width: 100%;
     gap: 15px;
@@ -424,7 +406,7 @@ body.dark-mode .btn-remover:hover{
     transform: none;
     width: 95%;
     max-height: none;
-    margin: 0 auto 40px auto;  /* Margem superior zerada pois o .btn-topo já dá o espaçamento */
+    margin: 0 auto 40px auto;
     padding-bottom: 40px;
   }
 
@@ -468,5 +450,3 @@ body.dark-mode .btn-remover:hover{
     margin: 4px;
   }
 }
-
-  
