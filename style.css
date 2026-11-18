@@ -170,7 +170,7 @@ body.dark-mode .btn-remover:hover{
 
 /* Estilização do nome */
 .card-inicial {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   color: #ff3bce;
   text-shadow: 0 0 10px rgba(255, 68, 239, 0.466);
   text-align: center;
@@ -228,7 +228,7 @@ progress::-webkit-progress-value {
   border-radius: 10px;
   border: 2px solid #ff00bf;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   color: #ffffff;
   text-shadow: 0 0 4px #000000;  
   text-align: center;
@@ -271,13 +271,14 @@ progress::-webkit-progress-value {
 /* Estilização padrão dos cards comuns */
 .card-box {
   color:#ffffff;
+  font-size: 0.8rem;
   border-color: #ff00bf;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787); /* Brilho neon na borda */
   cursor: pointer; /* muda o cursor pra maozinha */
   text-align: center;
   border: 2px solid #ff42cc; /* Borda neon rosa (ou troque para #00f3ff se preferir ciano) */
   border-radius: 12px;
-  padding: 12px;
+  padding: 10px;
   margin-bottom: 1.5%;
   background: linear-gradient(135deg, rgb(45, 4, 39), rgb(255, 0, 212), #00f2ff, #022d41);
   transition: all 0.3s ease;
@@ -304,10 +305,10 @@ progress::-webkit-progress-value {
   background: #ff54b500;
   border: 2px solid #ff23de;
   box-shadow: 0 0 10px rgba(255, 0, 187, 0.787);
-  font-size: 1.4rem;
+  font-size: 1rem;
   border-radius: 10px;
   padding: 20px;
-  padding-top: 35px;
+  padding-top: 55px;
   margin-top: -40px; /* gambiarra pra encaixar o card */
   margin-bottom: 10px;
   color: #fff;
@@ -336,7 +337,6 @@ progress::-webkit-progress-value {
   height: 80px;
   background-color: white;
   border-radius: 200px; /* Cantos arredondados estilo app */
-  
   box-shadow: 0 0 20px rgba(255, 0, 187, 0.787);
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -349,34 +349,19 @@ progress::-webkit-progress-value {
   box-shadow: 0 0 20px #00e1ff;
 }
 
-.btn-tema {
+.btn-topo {
   position: fixed;
-  top: 20px;    /* Distância em relação ao topo da página */
-  left: 20px;   /* Distância em relação à margem esquerda */
-  background: rgba(0, 0, 0, 0.8);
-  border: 2px solid #00f3ff;
-  color: #00f3ff;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
-  font-family: inherit;
-  font-weight: bold;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column; /* Empilhados no canto esquerdo em telas grandes */
+  gap: 12px;
   z-index: 1000;
-  transition: all 0.3s ease;
 }
-
-.btn-tema:hover {
-  background: #00f3ff;
-  color: #000;
-  box-shadow: 0 0 20px #00f3ff;
-}
-
-
+ 
+.btn-tema,
 .btn-neon-audio {
-  position: fixed;
-  top: 70px;    /* Distância em relação ao topo da página */
-  left: 20px;   /* Distância em relação à margem esquerda */
+  font-size: 0.7rem;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid #00f3ff;
   color: #00f3ff;
@@ -386,70 +371,78 @@ progress::-webkit-progress-value {
   box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
   font-family: inherit;
   font-weight: bold;
-  z-index: 1000;
   transition: all 0.3s ease;
 }
 
+.btn-tema:hover,
 .btn-neon-audio:hover {
   background: #00f3ff;
   color: #000;
   box-shadow: 0 0 20px #00f3ff;
 }
 
-
-/* Dispositivos com telas menores ou iguais a 992px (Tablets e celulares grandes) */
+/* =========================================================
+   RESPONSIVIDADE (Tablets e Celulares <= 992px)
+   ========================================================= */
 @media (max-width: 992px) {
-  
-  /* Ajusta o espaçamento interno do corpo da página para dispositivos móveis */
   body {
     padding: 20px 10px;
+    overflow-y: auto; /* Permite rolagem normal no mobile */
   }
 
-  /* A imagem de fundo lateral deixa de ocupar só a metade e cobre o fundo de forma sutil */
   body::before {
     width: 100vw;
     height: 100vh;
-    opacity: 0.2;            /* Reduz a opacidade para garantir total legibilidade do texto */
+    opacity: 0.2;
     background-position: center;
   }
 
-  /* O container principal perde o posicionamento absoluto e flui normalmente no centro */
-  .window-container {
-    position: relative;      /* Retira o posicionamento absoluto */
-    top: auto;               /* Remove o ajuste vertical anterior */
-    right: auto;             /* Remove o ajuste horizontal anterior */
-    transform: none;         /* Remove a centralização por translação */
-    width: 95%;              /* Ocupa quase toda a largura da tela do celular */
-    max-height: none;        /* Remove a restrição de altura máxima */
-    margin: 60px auto 20px auto; /* Adiciona margem no topo para não colar no botão de áudio */
+  /* Alinha os botões lado a lado e centralizados no topo */
+  .btn-topo {
+    position: static;          /* Sai do canto fixo e entra no fluxo normal */
+    flex-direction: row;       /* Coloca os botões lado a lado */
+    justify-content: center;   /* Centraliza horizontalmente */
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 15px;
   }
 
-}
+  .window-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 95%;
+    max-height: none;
+    margin: 0 auto 40px auto;  /* Margem superior zerada pois o .btn-topo já dá o espaçamento */
+    padding-bottom: 40px;
+  }
 
-/* Dispositivos móveis muito pequenos (Celulares compactos abaixo de 480px) */
-@media (max-width: 480px) {
-  
-  /* Reduz levemente o tamanho do título principal para evitar quebras feias de texto */
   .card-inicial {
-    font-size: 1.4rem;
+    font-size: 1rem;
     padding: 10px;
   }
 
-  /* Ajusta o tamanho da fonte interna dos cards para telas reduzidas */
-  .conteudo-card, .card-habilidades {
-    font-size: 1.1rem;
+  .card-box {
+    font-size: 0.8rem;
+    padding: 8px;
+    margin-bottom: 15px;
+  }
+
+  .card-habilidades {
+    font-size: 0.9rem;
     padding: 12px;
   }
 
-  /* Diminui levemente o tamanho dos ícones dos projetos para caberem melhor lado a lado */
+  .conteudo-card {
+    font-size: 0.9rem;
+    padding: 12px;
+    padding-top: 50px;
+  }
+
   .icone-projeto {
     width: 60px;
     height: 60px;
-  }
-
-  /* Reduz o tamanho do botão de áudio para não ocupar espaço excessivo na tela */
-  .btn-neon-audio {
-    padding: 8px 12px;
-    font-size: 0.9rem;
   }
 }
